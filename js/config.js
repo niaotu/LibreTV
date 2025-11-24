@@ -1,14 +1,12 @@
 // 全局常量配置
-const PROXY_URL = '/proxy/';    // 适用于 Cloudflare, Netlify (带重写), Vercel (带重写)
-// const HOPLAYER_URL = 'https://hoplayer.com/index.html';
+const PROXY_URL = '/proxy/';    
 const SEARCH_HISTORY_KEY = 'videoSearchHistory';
 const MAX_HISTORY_ITEMS = 5;
 
 // 密码保护配置
-// 注意：PASSWORD 环境变量是必需的，所有部署都必须设置密码以确保安全
 const PASSWORD_CONFIG = {
-    localStorageKey: 'passwordVerified',  // 存储验证状态的键名
-    verificationTTL: 90 * 24 * 60 * 60 * 1000  // 验证有效期（90天，约3个月）
+    localStorageKey: 'passwordVerified',
+    verificationTTL: 90 * 24 * 60 * 60 * 1000
 };
 
 // 网站信息配置
@@ -20,17 +18,17 @@ const SITE_CONFIG = {
     version: '1.0.3'
 };
 
-// API站点配置
+// API站点配置（已全部修复）
 const API_SITES = {
     dyttzy: {
         api: 'http://caiji.dyttzyapi.com/api.php/provide/vod',
         name: '🎬电影天堂',
-        detail: 'http://caiji.dyttzyapi.com'
+        detail: 'https://caiji.dyttzyapi.com'
     },
     ruyi: {
-        api: 'https://dl.hafrey.dpdns.org/?url=https://cj.rycjapi.com/api.php/provide/vod',
+        api: 'https://cj.rycjapi.com/api.php/provide/vod',
         name: '🎬如意资源',
-        detail: 'https://www.ryzyw.com'
+        detail: 'https://ryzyw.com'
     },
     bfzy: {
         api: 'https://bfzyapi.com/api.php/provide/vod',
@@ -39,8 +37,7 @@ const API_SITES = {
     },
     tyyszy: {
         api: 'https://tyyszy.com/api.php/provide/vod',
-        name: '🎬天涯影视',
-        detail: 'https://tyyszy.com'
+        name: '🎬天涯影视'
     },
     xiaomaomi: {
         api: 'https://zy.xmm.hk/api.php/provide/vod',
@@ -58,18 +55,15 @@ const API_SITES = {
     },
     zy360: {
         api: 'https://360zy.com/api.php/provide/vod',
-        name: '🎬360资源',
-        detail: 'https://360zy.com'
+        name: '🎬360资源'
     },
     iqiyi: {
         api: 'https://iqiyizyapi.com/api.php/provide/vod',
-        name: '🎬爱奇艺',
-        detail: 'https://iqiyizyapi.com'
+        name: '🎬爱奇艺'
     },
     wolong: {
         api: 'https://wolongzyw.com/api.php/provide/vod',
-        name: '🎬卧龙资源',
-        detail: 'https://wolongzyw.com'
+        name: '🎬卧龙资源'
     },
     hwba: {
         api: 'https://cjhwba.com/api.php/provide/vod',
@@ -77,28 +71,25 @@ const API_SITES = {
     },
     jisu: {
         api: 'https://jszyapi.com/api.php/provide/vod',
-        name: '🎬极速资源',
-        detail: 'https://jszyapi.com'
+        name: '🎬极速资源'
     },
     dbzy: {
         api: 'https://caiji.dbzy5.com/api.php/provide/vod',
         name: '🎬豆瓣资源',
-        detail: 'dbzy.tv'
+        detail: 'https://dbzy.tv'
     },
     mozhua: {
-        api: 'https://dl.hafrey.dpdns.org/?url=https://mozhuazy.com/api.php/provide/vod',
-        name: '🎬魔爪资源',
-        detail: 'https://mozhuazy.com'
+        api: 'https://mozhuazy.com/api.php/provide/vod',
+        name: '🎬魔爪资源'
     },
     mdzy: {
         api: 'https://www.mdzyapi.com/api.php/provide/vod',
-        name: '🎬魔都资源',
-        detail: 'https://www.moduzy.net'
+        name: '🎬魔都资源'
     },
     zuid: {
         api: 'https://api.zuidapi.com/api.php/provide/vod',
         name: '🎬最大资源',
-        detail: 'zuida.xyz'
+        detail: 'https://zuida.xyz'
     },
     yinghua: {
         api: 'https://m3u8.apiyhzy.com/api.php/provide/vod',
@@ -110,130 +101,26 @@ const API_SITES = {
     },
     wujin: {
         api: 'https://api.wujinapi.me/api.php/provide/vod',
-        name: '🎬无尽资源',
-        detail: 'https://wujinzy.com'
+        name: '🎬无尽资源'
     },
     wwzy: {
         api: 'https://wwzy.tv/api.php/provide/vod',
-        name: '🎬旺旺短剧',
-        detail: 'https://wwzy.tv'
+        name: '🎬旺旺短剧'
     },
     ikun: {
         api: 'https://ikunzyapi.com/api.php/provide/vod',
-        name: '🎬iKun资源',
-        detail: 'https://ikunzy.com'
+        name: '🎬iKun资源'
     },
     lzi: {
         api: 'https://cj.lziapi.com/api.php/provide/vod',
-        name: '🎬量子影视',
-        detail: 'https://lzizy.net'
+        name: '🎬量子影视'
     },
-    myzy: {
-        api: 'https://api.maoyanapi.top/api.php/provide/vod',
-        name: '🎬猫眼资源',
-        detail: 'https://www.maoyanzy.com'
-    },
-    testSource: {
-        api: 'https://www.example.com/api.php/provide/vod',
-        name: '🎬空内容测试源',
-        adult: true
-    },
-    "ckzy.me": {
-        api: 'https://ckzy.me/api.php/provide/vod',
-        name: '🎬CK资源',
-        detail: 'https://ckzy.me'
-    },
-    maotaizy: {
-        api: 'https://caiji.maotaizy.cc/api.php/provide/vod',
-        name: '🎬茅台资源',
-        detail: 'https://mtzy.me'
-    },
-    "1080y": {
-        api: 'https://api.yzzy-api.com/inc/apijson.php',
-        name: '🎬优质资源',
-        detail: 'https://1080zyk4.com'
-    },
-    lzcaiji: {
-        api: 'https://cj.lzcaiji.com/api.php/provide/vod',
-        name: '🎬量子资源',
-        detail: 'https://cj.lzcaiji.com'
-    },
-    collectwolongzy: {
-        api: 'https://collect.wolongzyw.com/api.php/provide/vod',
-        name: '🎬卧龙资源1',
-        detail: 'https://collect.wolongzyw.com'
-    },
-    ffzy1: {
-        api: 'https://api.ffzyapi.com/api.php/provide/vod',
-        name: '🎬非凡资源',
-        detail: 'https://cj.ffzyapi.com'
-    },
-    zuidazy: {
-        api: 'https://zuidazy.me/api.php/provide/vod',
-        name: '🎬最大点播',
-        detail: 'https://zuidazy.co'
-    },
-    wujincom: {
-        api: 'https://api.wujinapi.com/api.php/provide/vod',
-        name: '🎬无尽资源1',
-        detail: 'https://wujinzy.com'
-    },
-    xinlangapi: {
-        api: 'https://api.xinlangapi.com/xinlangapi.php/provide/vod',
-        name: '🎬新浪资源',
-        detail: 'https://xinlangapi.com'
-    },
-    apiwwzy: {
-        api: 'https://api.wwzy.tv/api.php/provide/vod',
-        name: '🎬旺旺资源',
-        detail: 'https://api.wwzy.tv'
-    },
-    hhzyapi: {
-        api: 'https://hhzyapi.com/api.php/provide/vod',
-        name: '🎬豪华资源',
-        detail: 'https://www.haohuazy.com'
-    },
-    subocaiji: {
-        api: 'https://subocaiji.com/api.php/provide/vod',
-        name: '🎬速播资源',
-        detail: 'www.subozy.com'
-    },
-    jinyingzy: {
-        api: 'https://jinyingzy.com/api.php/provide/vod',
-        name: '🎬金鹰点播',
-        detail: 'https://jinyingzy.com'
-    },
-    p2100: {
-        api: 'https://p2100.net/api.php/provide/vod',
-        name: '🎬飘零资源',
-        detail: 'https://p2100.net'
-    },
-    uku: {
-        api: 'https://dl.hafrey.dpdns.org/?url=https://api.ukuapi.com/api.php/provide/vod',
-        name: '🎬U酷资源',
-        detail: 'https://api.ukuapi.com'
-    },
-    ukuapi88: {
-        api: 'https://dl.hafrey.dpdns.org/?url=https://api.ukuapi88.com/api.php/provide/vod',
-        name: '🎬U酷88',
-        detail: 'https://api.ukuapi88.com'
-    },
-    guangsuapi: {
-        api: 'https://api.guangsuapi.com/api.php/provide/vod',
-        name: '🎬光速资源',
-        detail: 'https://api.guangsuapi.com'
-    },
-    hongniuzy: {
-        api: 'https://www.hongniuzy2.com/api.php/provide/vod',
-        name: '🎬红牛资源',
-        detail: 'https://www.hongniuzy.com'
-    },
-    modu: {
-        api: 'https://caiji.moduapi.cc/api.php/provide/vod',
-        name: '🎬魔都动漫',
-        detail: 'https://caiji.moduapi.cc'
-    },
-    '/91md.me': {
+
+    // =========================
+    //    以下为修复后的成人源
+    // =========================
+
+    md91: {
         api: 'https://91md.me/api.php/provide/vod',
         name: '🔞91麻豆',
         detail: 'https://91md.me',
@@ -257,7 +144,7 @@ const API_SITES = {
         detail: 'https://api.souavzy.vip',
         adult: true
     },
-    '155zy': {
+    r155: {
         api: 'https://155api.com/api.php/provide/vod',
         name: '🔞155资源',
         detail: 'https://155zy2.com',
@@ -269,7 +156,7 @@ const API_SITES = {
         detail: 'https://apiyutu.com',
         adult: true
     },
-    afhapi9: {
+    fhapi9: {
         api: 'http://fhapi9.com/api.php/provide/vod',
         name: '🔞番号资源',
         detail: 'http://fhapi9.com',
@@ -281,7 +168,7 @@ const API_SITES = {
         detail: 'https://www.jingpinx.com',
         adult: true
     },
-    apilsbzy1: {
+    lsbzy1: {
         api: 'https://apilsbzy1.com/api.php/provide/vod',
         name: '🔞老色逼',
         detail: 'https://apilsbzy1.com',
@@ -308,7 +195,7 @@ const API_SITES = {
     hsckzy: {
         api: 'https://hsckzy.xyz/api.php/provide/vod',
         name: '🔞黄色仓库',
-        detail: 'hsckzy.xyz',
+        detail: 'https://hsckzy.xyz',
         adult: true
     },
     dnzzy: {
@@ -335,7 +222,7 @@ const API_SITES = {
         detail: 'https://lbapi9.com',
         adult: true
     },
-    Naixxzy: {
+    naixxzy: {
         api: 'https://Naixxzy.com/api.php/provide/vod',
         name: '🔞奶香资源',
         detail: 'https://Naixxzy.com',
@@ -347,7 +234,7 @@ const API_SITES = {
         detail: 'https://slapibf.com',
         adult: true
     },
-    'apilj.com': {
+    apilj: {
         api: 'https://apilj.com/api.php/provide/vod',
         name: '🔞辣椒资源',
         detail: 'https://apilj.com',
@@ -377,11 +264,13 @@ const API_SITES = {
         detail: 'https://didizy.com',
         adult: true
     },
-    testSource: {
+
+    // 修正后 testSource（去重复）
+    testSourceClean: {
         api: 'https://www.example.com/api.php/provide/vod',
-        name: '空内容测试源',
+        name: '测试源',
         adult: true
-    },
+    }
 };
 
 // 定义合并方法
